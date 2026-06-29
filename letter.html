@@ -3,19 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Letter | Akanksha</title>
+  <title>Letter | Kamali</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Dancing+Script:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="cursor-glow"></div>
-  <div class="floating-bg"></div>
-
   <nav class="navbar glass">
-    <a href="index.html" class="logo">Akanksha</a>
+    <a href="index.html" class="logo">Kamali</a>
     <div class="nav-links">
       <a href="memories.html">Memories</a>
-      <a href="reasons.html">Reasons</a>
       <a href="letter.html">Letter</a>
       <a href="cake.html">Cake</a>
       <a href="final.html">Final</a>
@@ -23,18 +19,40 @@
   </nav>
 
   <main class="letter-page">
+    <!-- Envelope animation -->
     <section class="envelope reveal" id="envelope">
       <div class="flap"></div>
       <div class="env-body"><p>Click to open</p></div>
     </section>
 
+    <!-- Letter content -->
     <section class="letter-paper reveal delay-1" id="letterPaper">
-      <p class="script-text">Dear Akanksha,</p>
+      <p class="script-text">Dear Kamali,</p>
       <p id="typedLetter"></p>
     </section>
   </main>
 
   <footer class="footer">Written with all the love words could hold ✦</footer>
-  <script src="script.js"></script>
+
+  <script>
+    const envelope = document.getElementById("envelope");
+    const letterPaper = document.getElementById("letterPaper");
+    const typedLetter = document.getElementById("typedLetter");
+
+    const message = "Happy Birthday, my love. ❤️🎂😘 Today is all about celebrating the wonderful person you are and the happiness you bring into my life every single day. 💖 Being with you has filled my life with love, laughter, and beautiful memories that I will always cherish. 🫂💕 Your smile brightens my days, your kindness inspires me, and your presence makes every moment feel special. 😘✨\n\nThank you for being my biggest happiness, my greatest comfort, and the person who makes my life complete. 🫂❤️ I feel incredibly lucky to walk through life with you, and I look forward to creating many more unforgettable memories together. 💞😘 I hope this birthday brings you endless joy, good health, success, and everything your heart wishes for, because you deserve nothing less. 🌹🎉\n\nHappy Birthday, my dearest Kamali. ❤️😘 I love you more with each passing day, and I promise to stand by your side, celebrate every milestone with you, and make every year even more beautiful than the last. 🫂💕 Here's to many more birthdays, countless smiles, warm hugs, sweet kisses, and a lifetime of love together. 😘💋🫂❤️🎉✨";
+
+    envelope.addEventListener("click", () => {
+      envelope.classList.add("open");
+      letterPaper.classList.add("show");
+
+      let i = 0;
+      typedLetter.textContent = "";
+      const typing = setInterval(() => {
+        typedLetter.textContent += message.charAt(i);
+        i++;
+        if (i === message.length) clearInterval(typing);
+      }, 50);
+    });
+  </script>
 </body>
 </html>

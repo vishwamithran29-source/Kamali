@@ -3,34 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cake | Akanksha</title>
+  <title>Cake | Kamali</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Dancing+Script:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body class="night">
   <div class="cursor-glow"></div>
 
+  <!-- Navigation -->
   <nav class="navbar glass">
-    <a href="index.html" class="logo">Akanksha</a>
+    <a href="index.html" class="logo">Kamali</a>
     <div class="nav-links">
       <a href="memories.html">Memories</a>
-      <a href="reasons.html">Reasons</a>
       <a href="letter.html">Letter</a>
-      <a href="cake.html">Cake</a>
+      <a href="cake.html" class="active">Cake</a>
       <a href="final.html">Final</a>
     </div>
   </nav>
 
+  <!-- Cake Section -->
   <main class="cake-page">
     <section>
       <p class="script-text reveal">You mean the world to me</p>
-      <h1 class="reveal">Happy Birthday Akanksha</h1>
+      <h1 class="reveal">Happy Birthday My Love Kamali 🎂</h1>
 
       <div class="cake-section">
         <div class="cake-glow"></div>
 
+        <!-- Stage text changes during animation -->
         <div class="cake-stage-text" id="cakeStageText">🥳</div>
 
+        <!-- Cake structure -->
         <div class="cake" id="birthdayCake" aria-label="birthday cake cutting animation">
           <div class="knife" aria-hidden="true">
             <span class="knife-blade"></span>
@@ -51,11 +54,13 @@
           <div class="plate"></div>
         </div>
 
-        <button class="cut-cake-btn" type="button">Start Cake Cutting 🎂</button>
+        <!-- Button to trigger animation -->
+        <button class="cut-cake-btn" type="button">Start Cake Cutting 🎉</button>
       </div>
     </section>
   </main>
 
+  <!-- Confetti Canvas -->
   <canvas id="confetti"></canvas>
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   <script src="script.js"></script>
